@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import logo from './logo.svg';
 import './App.css';
 
@@ -21,6 +22,17 @@ function App() {
       </header>
     </div>
   );
+=======
+import './App.css';
+import Container from './components/Container'
+
+function App() {
+    return (
+        <>
+            <Container/>
+        </>
+    )
+>>>>>>> f8fd740789076d3054e3c1342c636863496140e3
 }
 
 export default App;
