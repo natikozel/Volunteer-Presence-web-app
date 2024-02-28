@@ -1,17 +1,23 @@
-import Input from "./Input";
 import React, {memo} from 'react';
+import {Checkbox} from "./ui/checkbox";
+import {Label} from "./ui/label";
 
-const GradeListComponent = memo(function GradeListComponent({data, onSelect, grade}: any) {
+const GradeListComponent = memo(function GradeListComponent({data, onSelect}: any) {
     return (
         <>
             <ul>
-                <h4>{grade}</h4>
                 {data.map((name: any, index: number) =>
-                    <li key={Math.random()}>
-                        <Input onSelect={onSelect} name={name}/>
+                    <li className="flex" key={Math.random()}>
+                            <Checkbox className={"flex"} onClick={() => onSelect(name)} id="terms"/>
+                            <br/>
+                            <Label
+                                htmlFor="terms"
+                                style={{marginRight: "10px"}} className="font-bold flex text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            >{name}
+                            </Label>
                     </li>)
                 }
             </ul>
-        </>)
-})
+        </>);
+});
 export default GradeListComponent;

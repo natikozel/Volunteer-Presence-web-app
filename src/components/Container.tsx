@@ -31,13 +31,13 @@ const Container = () => {
     }, [])
 
     return (
-        <>
+        <div className={"flex min-h-screen justify-center items-center"}>
             {
                 !!Object.keys(data).length ?
                     <ListContent data={data}/> :
                     <Login onLogin={handleData}/>
             }
-        </>
+        </div>
     )
 }
 

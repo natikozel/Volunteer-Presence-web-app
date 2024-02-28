@@ -4,8 +4,7 @@ import getUserToken from "../http";
 const LOGIN_URL: string = 'http://localhost:4000/login'
 
 export interface User {
-    email: string,
-    password: string;
+    name: string,
 }
 
 const Login = ({onLogin}: any) => {
@@ -13,9 +12,10 @@ const Login = ({onLogin}: any) => {
     const [state, setState]
         : [User, React.Dispatch<React.SetStateAction<User>>]
         = useState<User>({
-        email: '',
-        password: ''
+        name: '',
     })
+
+    const [error, setError] = useState<any>('');
 
 
     const handleInput = (e: any) => {
@@ -29,22 +29,32 @@ const Login = ({onLogin}: any) => {
     const fetchUser = async (e: any) => {
         e.preventDefault()
         const token = await getUserToken('POST', LOGIN_URL, state);
+        if (token.err) {
+            setError("משתמש לא נמצא, נסה שנית");
+            setState(prevState => {
+                return {
+                    ...prevState,
+                    name: ''
+                }
+            })
+            return
+        }
         onLogin(token.session.authenticated ? token.data : undefined)
     }
 
     return (
-        <div className="login">
+        <div className="login h-96 flex flex-wrap content-center">
             <form>
                 <div className="form-field">
-                    <input name="email" onChange={handleInput} type="email" placeholder="Email / Username" required/>
+                    <input name="name" value={state.name} onChange={handleInput} type="text" placeholder="שם מלא" required/>
                 </div>
+                {!!error? <p className={"w-full p-5 font-medium text-right rounded-md border-slate-300 text-red-600 placeholder:opacity-60 self-end"}>{error}</p> : null}
+                {/*<div className="form-field">*/}
+                {/*    <input name="password" onChange={handleInput} type="password" placeholder="Password" required/>*/}
+                {/*</div>*/}
 
                 <div className="form-field">
-                    <input name="password" onChange={handleInput} type="password" placeholder="Password" required/>
-                </div>
-
-                <div className="form-field">
-                    <button onClick={fetchUser} className="btn" type="submit">Log in</button>
+                    <button onClick={fetchUser} className="btn" type="submit">היכנס למערכת</button>
                 </div>
             </form>
         </div>

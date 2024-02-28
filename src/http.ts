@@ -12,7 +12,9 @@ const getUserToken = async (method = 'GET', url: string, data?: any) => {
                 },
                 body: JSON.stringify({data}),
             })
-            return response.json();
+            response = await response.json();
+            console.log(response);
+            return response
     }
 }
 
