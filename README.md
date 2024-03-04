@@ -23,14 +23,8 @@ Additionally, the project implements components from "shad.cn", enhancing the us
 
 ## Installation
 
-1. **Clone the repository**: `git clone https://github.com/natikozel/school-project.git`
+1. **Clone the repository**: `git clone https://github.com/natikozel/Volunteer-Presence-web-app`
 2. **Install dependencies**: `npm install`
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/your-username/volunteer-presence-web-app.git
-```
 
 ## Usage
 
