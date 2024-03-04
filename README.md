@@ -1,46 +1,77 @@
-# Getting Started with Create React App
+# Volunteer Presence Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This project is a freelance web application designed primarily for mobile usage but also suitable for larger resolutions.
+It aims to streamline the process of tracking attendance for volunteers instructing 4th to 7th graders in math and programming languages.
+Volunteers can log in, mark the attendance of the children using checkboxes, and submit the attendance chart to the manager via email.
 
-### `npm start`
+Additionally, the project implements components from "shad.cn", enhancing the user interface and experience with professionally designed elements.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **User Authentication**: Volunteers can log in securely to access the attendance tracking functionality.
+- **Attendance Tracking**: Volunteers can mark the presence of children for each session using checkboxes.
+- **Email Submission**: Upon submission, the updated attendance chart is sent via email to the manager for record-keeping.
+- **React Frontend**: The frontend of the application is built using React, providing a dynamic and responsive user interface.
+- **Node.js Server**: The server-side logic is implemented using Node.js, providing a scalable and efficient runtime environment.
+- **Integration with shad.cn Components**: The project incorporates components from "shad.cn", enhancing the user interface with professionally designed elements.
+- **JSON Data Storage**: Instead of a traditional database, the application stores attendance data in JSON files and replacing them constantly with new ones, simplifying setup and maintenance.
+- **Responsive Design**: The user interface is designed to be responsive, ensuring a consistent experience across different devices and screen sizes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+1. **Clone the repository**: `git clone https://github.com/natikozel/school-project.git`
+2. **Install dependencies**: `npm install`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/your-username/volunteer-presence-web-app.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+To run the project locally, after installing dependencies, start the application by running:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm start
+```
+Access the game in your browser by visiting `http://localhost:3000`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Screenshots
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Login
+![Login](./src/assets/s1.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+*This image showcases the login system of the app along with the organization's logo. To log in, users are required to enter the username "נתנאל קוזל".*
 
-## Learn More
+### School Selection UI
+![School Selection UI](./src/assets/s2.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+*This image displays the user interface where volunteers are prompted to select the school they are volunteering at.*
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Children Attendance Interface
+![Children Attendance Interface](./src/assets/s3.png)
+
+*This image presents multiple accordions, each containing a list of checkboxes corresponding to the names of children attending the session. Volunteers can mark the attendance of each child by selecting the checkboxes.*
+
+### Confirmation Popup
+![Confirmation Popup](./src/assets/s4.png)
+
+*This image showcases a popup message confirming the submission of attendance. Clicking "Send" in the popup will trigger the sending of the attendance email to the manager.*
+
+
+
+## Contributing
+
+Contributions are welcome! If you'd like to improve the game or add new features, feel free to submit a pull request.
+
+
+## Contact
+
+For any inquiries or feedback, feel free to contact [netanelkozel@gmail.com](mailto:netanelkozel@gmail.com).
+
+
